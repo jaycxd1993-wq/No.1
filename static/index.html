@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>No.1 · 登录示例</title>
+  <link rel="stylesheet" href="/static/style.css">
+  <script src="/static/app.js" defer></script>
+</head>
+<body>
+  <main>
+    <header><span class="brand">No.1</span><span class="badge">本机演示</span></header>
+    <div class="intro"><p class="eyebrow">从一个账号开始</p><h1>登录，让你的身份被识别。</h1><p>创建账号，登录后查看个人资料，也可以试试续期和退出。</p></div>
+    <div class="layout">
+      <section class="card" aria-labelledby="form-title">
+        <h2 id="form-title">欢迎回来</h2>
+        <p id="form-description">还没有账号？切换到注册即可创建。</p>
+        <div class="switch" role="group" aria-label="选择操作">
+          <button id="login-mode" type="button" aria-pressed="true">登录</button>
+          <button id="register-mode" type="button" aria-pressed="false">注册</button>
+        </div>
+        <form id="auth-form">
+          <label for="email">邮箱</label><input id="email" name="email" type="email" autocomplete="username" maxlength="254" placeholder="you@example.com" required>
+          <label for="password">密码</label><input id="password" name="password" type="password" autocomplete="current-password" minlength="12" maxlength="128" required aria-describedby="password-hint">
+          <p class="hint" id="password-hint">使用 12–128 个字符。</p>
+          <button id="submit" class="primary" type="submit">登录</button>
+        </form>
+        <p id="notice" role="status" aria-live="polite">可以先注册一个账号。</p>
+      </section>
+      <section class="card profile" aria-labelledby="profile-title">
+        <div class="profile-heading"><h2 id="profile-title">当前会话</h2><span id="session-badge" class="badge">未登录</span></div>
+        <div class="avatar" aria-hidden="true">N</div>
+        <p id="profile-email">登录后，这里会显示你的邮箱。</p>
+        <dl><dt>身份验证</dt><dd id="identity-status">等待登录</dd><dt>访问有效期</dt><dd id="expiry">—</dd></dl>
+        <div class="actions"><button id="me" type="button">查看个人资料</button><button id="refresh" type="button">续期登录</button><button id="logout" type="button">退出登录</button></div>
+        <p class="hint">刷新页面后会尝试恢复登录。退出后，再查看资料会提示登录。</p>
+      </section>
+    </div>
+    <footer>本机数据保存在项目的 data 文件夹中。关闭服务后，账号仍会保留。</footer>
+  </main>
+</body>
+</html>
